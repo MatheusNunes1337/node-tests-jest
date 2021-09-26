@@ -27,4 +27,22 @@ describe('Authentication', () => {
         expect(response.status).toBe(200)
         
     })
+
+    it('should not authenticate with invalid credentials', async () => {
+        const user = await User.create({
+            name: "Matheus",
+            email: "matheusnunes1337@gmail.com",
+            password_hash: "123267"
+        })
+
+        const response = await request(app)
+        .post('/sessions')
+        .send({
+            email: user.email,
+            password: '423267'
+        })
+        
+        expect(response.status).toBe(401)
+        
+    })
 })

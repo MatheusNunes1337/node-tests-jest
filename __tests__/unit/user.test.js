@@ -12,11 +12,11 @@ describe('User', () => {
         const user = await User.create({
             name: 'Matheus', 
             email: 'matheus147@gmail.com',
-            password: '123456'
+            password: '123267'
         })
 
         const hash = await bcrypt.hash(user.password, 8)
 
-        expect(await bcrypt.compare('123456', user.password_hash)).toBe(true)
+        expect(await bcrypt.compare('123267', user.password_hash)).toBe(true)
     })
 })
