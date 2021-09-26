@@ -10,6 +10,7 @@ module.exports = {
   // Stop running tests after `n` failures
   bail: true,
 
+
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/tmp/jest_rs",
 
@@ -191,3 +192,5 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+
